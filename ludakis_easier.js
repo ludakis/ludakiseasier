@@ -405,7 +405,10 @@ function redim(div, nouvelleLageur, taille_img_choisie_w, taille_img_choisie_h){
 	
 	}
 
-
+function rendreCarre(idDiv){
+	var a = lire_css(idDiv,"width");
+	seT(idDiv,"height",a);
+	}
 
 function classnom(id, nouveau_nom_de_class){
 	document.getElementById(id).className = nouveau_nom_de_class;
