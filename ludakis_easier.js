@@ -410,9 +410,21 @@ function rendreCarre(idDiv){
 	seT(idDiv,"height",a);
 	}
 
+//<!------------------------------------------------------------------------------------------------------!>
+//<!---------------------------------MANIPULATION DES CLASSES CSS-----------------------------------------!>
+//<!------------------------------------------------------------------------------------------------------!>
+
 function classnom(id, nouveau_nom_de_class){
 	document.getElementById(id).className = nouveau_nom_de_class;
 	}
+
+function couper_class(idDeLElement, partie_de_la_classe_a_couper) { // CEtte fonction coupe une partie du texte de la classe d'un element.
+  var classe = lire_class(idDeLElement);
+  var tailleTotaleTxtClasse = classe.length;
+  var taille_txt_a_couper = partie_de_la_classe_a_couper.length;
+  var txt_restant = classe.substr(0, tailleTotaleTxtClasse-taille_txt_a_couper);
+  classnom(idDeLElement, txt_restant);
+}
 
 function lire_class(id){
 	var rep = document.getElementById(id).getAttribute('class');
